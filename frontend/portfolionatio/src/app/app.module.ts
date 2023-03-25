@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +29,7 @@ import { SkillssService } from './services/skillss.service';
 import { BannerService } from './services/banner.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 
 @NgModule({
@@ -69,6 +70,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     SkillssService,
     InterceptorService,
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   bootstrap: [AppComponent]
 })
